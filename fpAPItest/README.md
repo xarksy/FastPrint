@@ -72,14 +72,10 @@ Pastikan Anda sudah menginstall:
 ### 2. Clone Repository
 ```bash
 git clone [https://github.com/xarksy/FastPrint.git](https://github.com/xarksy/FastPrint.git)
-cd nama-repo-anda# Sistem Manajemen Produk & Sinkronisasi API
+cd FastPrint # Sistem Manajemen Produk & Sinkronisasi API
+```
 
-Aplikasi web berbasis Django untuk mengelola data produk. Aplikasi ini memiliki fitur utama **Sinkronisasi Otomatis** dengan API FastPrint, yang memungkinkan pengambilan data eksternal, validasi, dan penyimpanan ke database lokal (PostgreSQL) dengan mekanisme *Upsert* (Update or Insert).
-
-Dibuat sebagai bagian dari Tes Programmer FastPrint.
-
-
-3. Buat Virtual Environment
+### 3. Buat Virtual Environment
 Disarankan menggunakan virtual environment agar library tidak tercampur.
 
 Bash
@@ -91,11 +87,11 @@ venv\Scripts\activate
 python3 -m venv venv
 source venv/bin/activate
 
-4. Install Dependencies
+### 4. Install Dependencies
 Bash
 pip install -r requirements.txt
 
-5. Konfigurasi Environment Variable (.env)
+### 5. Konfigurasi Environment Variable (.env)
 Buat file baru bernama .env di folder root (sejajar dengan manage.py). Salin konfigurasi berikut dan sesuaikan dengan database lokal Anda:
 
 Ini, TOML
@@ -111,14 +107,14 @@ DB_HOST=localhost
 DB_PORT=5432
 
 
-6. Setup Database
+### 6. Setup Database
 Pastikan Anda sudah membuat database kosong bernama db_fastprint di PostgreSQL Anda. Lalu jalankan migrasi:
 
 Bash
 python manage.py makemigrations
 python manage.py migrate
 
-7. Jalankan Server
+### 7. Jalankan Server
 Bash
 python manage.py runserver
 Buka browser dan akses: http://127.0.0.1:8000/
