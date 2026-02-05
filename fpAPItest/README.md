@@ -129,33 +129,26 @@ ________________________________________________________________________________
 
 🧠 Penjelasan Logika & Algoritma
 1. Autentikasi Dinamis (Dynamic Auth)
-Sistem tidak menggunakan kredensial statis. Saat sinkronisasi dilakukan, sistem melakukan generate kredensial secara real-time:
+    Sistem tidak menggunakan kredensial statis. Saat sinkronisasi dilakukan, sistem melakukan generate kredensial secara real-time:
 
-Username: tesprogrammer + ddmmyy (Tanggal) + C + HH (Jam Server).
+        Username: tesprogrammer + ddmmyy (Tanggal) + C + HH (Jam Server).
+        Password: String bisacoding-dd-mm-yy yang diubah menjadi MD5 Hash menggunakan library hashlib.
 
-Password: String bisacoding-dd-mm-yy yang diubah menjadi MD5 Hash menggunakan library hashlib.
+2. Logika Smart Upsert (Update/Insert) 
+    Fitur sinkronisasi bekerja dengan alur cerdas untuk mencegah duplikasi:
+        Django mengirim request POST ke API FastPrint.
+        Data JSON diterima dan di-parsing.
 
-2. Logika Smart Upsert (Update/Insert)
-Fitur sinkronisasi bekerja dengan alur cerdas untuk mencegah duplikasi:
+    Looping Data:
+        Cek apakah Kategori dan Status sudah ada? Jika belum, buat baru (get_or_create).
+        Cek apakah Produk dengan ID tersebut sudah ada?
+        Jika Ada: Lakukan UPDATE (data lama diperbarui).
+        Jika Tidak Ada: Lakukan INSERT (buat data baru).
 
-Django mengirim request POST ke API FastPrint.
-
-Data JSON diterima dan di-parsing.
-
-Looping Data:
-
-Cek apakah Kategori dan Status sudah ada? Jika belum, buat baru (get_or_create).
-
-Cek apakah Produk dengan ID tersebut sudah ada?
-
-Jika Ada: Lakukan UPDATE (data lama diperbarui).
-
-Jika Tidak Ada: Lakukan INSERT (buat data baru).
-
-Hasil: Database lokal selalu up-to-date tanpa error duplicate key.
+    Hasil: Database lokal selalu up-to-date tanpa error duplicate key.
 
 3. Mekanisme Reset Database
-Fitur "Kosongkan Database" menggunakan perintah .delete() pada level Model Django yang aman. Ini akan menghapus seluruh data Produk beserta relasinya, namun tidak akan menghapus akun Superuser/Admin, sehingga Anda tidak perlu login ulang setelah reset.
+    Fitur "Kosongkan Database" menggunakan perintah .delete() pada level Model Django yang aman. Ini akan menghapus seluruh data Produk beserta relasinya, namun tidak akan menghapus akun Superuser/Admin, sehingga Anda tidak perlu login ulang setelah reset.
 
 👤 Author
 Sandra
