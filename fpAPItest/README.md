@@ -78,18 +78,22 @@ cd FastPrint # Sistem Manajemen Produk & Sinkronisasi API
 ### 3. Buat Virtual Environment
 Disarankan menggunakan virtual environment agar library tidak tercampur.
 
-Bash
+```Bash
 # Untuk Windows
 python -m venv venv
 venv\Scripts\activate
+```
 
 # Untuk Mac/Linux
+```Bash
 python3 -m venv venv
 source venv/bin/activate
+```
 
 ### 4. Install Dependencies
-Bash
+```Bash
 pip install -r requirements.txt
+```
 
 ### 5. Konfigurasi Environment Variable (.env)
 Buat file baru bernama .env di folder root (sejajar dengan manage.py). Salin konfigurasi berikut dan sesuaikan dengan database lokal Anda:
@@ -110,13 +114,15 @@ DB_PORT=5432
 ### 6. Setup Database
 Pastikan Anda sudah membuat database kosong bernama db_fastprint di PostgreSQL Anda. Lalu jalankan migrasi:
 
-Bash
+```Bash
 python manage.py makemigrations
 python manage.py migrate
+```
 
 ### 7. Jalankan Server
-Bash
+``` Bash
 python manage.py runserver
+```
 Buka browser dan akses: http://127.0.0.1:8000/
 
 📸 Screenshot Aplikasi
