@@ -78,8 +78,8 @@ cd FastPrint # Sistem Manajemen Produk & Sinkronisasi API
 ### 3. Buat Virtual Environment
 Disarankan menggunakan virtual environment agar library tidak tercampur.
 
-```Bash
 # Untuk Windows
+```Bash
 python -m venv venv
 venv\Scripts\activate
 ```
