@@ -71,7 +71,7 @@ Pastikan Anda sudah menginstall:
 
 ### 2. Clone Repository
 ```bash
-git clone [https://github.com/username-anda/nama-repo-anda.git](https://github.com/username-anda/nama-repo-anda.git)
+git clone [https://github.com/xarksy/FastPrint.git](https://github.com/xarksy/FastPrint.git)
 cd nama-repo-anda# Sistem Manajemen Produk & Sinkronisasi API
 
 Aplikasi web berbasis Django untuk mengelola data produk. Aplikasi ini memiliki fitur utama **Sinkronisasi Otomatis** dengan API FastPrint, yang memungkinkan pengambilan data eksternal, validasi, dan penyimpanan ke database lokal (PostgreSQL) dengan mekanisme *Upsert* (Update or Insert).
