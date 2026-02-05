@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django
+*.log
+*.pot
+db.sqlite3
+media/
+
+# Environment Virtual (PENTING: Jangan upload folder library)
+venv/
+env/
+.env
+.venv/
+
+# IDE Settings (VS Code, Pycharm, dll)
+.vscode/
+.idea/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Environment Variables (Jika nanti pakai library python-decouple)
+.env
