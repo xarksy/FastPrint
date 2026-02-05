@@ -98,7 +98,7 @@ pip install -r requirements.txt
 ### 5. Konfigurasi Environment Variable (.env)
 Buat file baru bernama .env di folder root (sejajar dengan manage.py). Salin konfigurasi berikut dan sesuaikan dengan database lokal Anda:
 
-Ini, TOML
+```Bash
 # Keamanan Django
 SECRET_KEY=isi-secret-key-bebas-disini
 DEBUG=True
@@ -109,6 +109,7 @@ DB_USER=postgres
 DB_PASSWORD=password_postgres_anda
 DB_HOST=localhost
 DB_PORT=5432
+```
 
 
 ### 6. Setup Database
